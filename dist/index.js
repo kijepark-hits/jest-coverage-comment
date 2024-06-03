@@ -767,10 +767,11 @@ exports.parseJunit = parseJunit;
 /** Convert JUnit from JUnit XML to md. */
 function junitToMarkdown(junit, options, withoutHeader = false) {
     const { skipped, errors, failures, tests, time } = junit;
+    const passed = tests - skipped - failures - errors;
     const displayTime = time > 60 ? `${(time / 60) | 0}m ${time % 60 | 0}s` : `${time}s`;
     const tableHeader = `| Tests | Passes | Skipped | Failures | Errors | Time |
 | ----- | ----- | ------- | -------- | -------- | ------------------ |`;
-    const content = `| ${tests} | ??? :white_check_mark: | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
+    const content = `| ${tests} | ${passed} :white_check_mark: | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
     const table = `${tableHeader}
 ${content}
 `;

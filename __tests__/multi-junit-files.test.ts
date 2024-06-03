@@ -48,7 +48,7 @@ describe('multi junit report', () => {
     expect(result).toMatchInlineSnapshot(`
       "| Title | Tests | Passes | Skipped | Failures | Errors | Time |
       | --- | --- | --- | --- | --- | --- | --- |
-      | title1 | 6 | ??? :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
+      | title1 | 6 | 6 :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
       "
     `)
   })
@@ -64,8 +64,8 @@ describe('multi junit report', () => {
     expect(result).toMatchInlineSnapshot(`
       "| Title | Tests | Passes | Skipped | Failures | Errors | Time |
       | --- | --- | --- | --- | --- | --- | --- |
-      | title1 | 6 | ??? :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
-      | title2 | 6 | ??? :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
+      | title1 | 6 | 6 :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
+      | title2 | 6 | 6 :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
       "
     `)
   })
