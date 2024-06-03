@@ -24,8 +24,8 @@ export async function getMultipleJunitReport(
 
     let atLeastOneFileExists = false
     let table =
-      '| Title | Tests | Skipped | Failures | Errors | Time |\n' +
-      '| --- | --- | --- | --- | --- | --- |\n'
+      '| Title | Tests | Passes | Skipped | Failures | Errors | Time |\n' +
+      '| --- | --- | --- | --- | --- | --- | --- |\n'
 
     for (const titleFileLine of lineReports) {
       const { title, file } = titleFileLine

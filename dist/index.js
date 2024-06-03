@@ -768,9 +768,9 @@ exports.parseJunit = parseJunit;
 function junitToMarkdown(junit, options, withoutHeader = false) {
     const { skipped, errors, failures, tests, time } = junit;
     const displayTime = time > 60 ? `${(time / 60) | 0}m ${time % 60 | 0}s` : `${time}s`;
-    const tableHeader = `| Tests | Skipped | Failures | Errors | Time |
-| ----- | ------- | -------- | -------- | ------------------ |`;
-    const content = `| ${tests} | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
+    const tableHeader = `| Tests | Passes | Skipped | Failures | Errors | Time |
+| ----- | ----- | ------- | -------- | -------- | ------------------ |`;
+    const content = `| ${tests} | ??? | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
     const table = `${tableHeader}
 ${content}
 `;
@@ -871,8 +871,8 @@ function getMultipleReport(options) {
             return null;
         }
         let atLeastOneFileExists = false;
-        let table = '| Title-edited | Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |\n' +
-            '| --- | --- | --- | --- | --- | --- |\n';
+        let table = '| Title | Lines | Statements | Branches | Functions |\n' +
+            '| --- | --- | --- | --- | --- |\n';
         for (const titleFileLine of lineReports) {
             const { title, file } = titleFileLine;
             const jsonContent = (0, utils_1.getContentFile)(file);
@@ -950,8 +950,8 @@ async function getMultipleJunitReport(options) {
             return null;
         }
         let atLeastOneFileExists = false;
-        let table = '| Title | Tests | Skipped | Failures | Errors | Time |\n' +
-            '| --- | --- | --- | --- | --- | --- |\n';
+        let table = '| Title | Tests | Passes | Skipped | Failures | Errors | Time |\n' +
+            '| --- | --- | --- | --- | --- | --- | --- |\n';
         for (const titleFileLine of lineReports) {
             const { title, file } = titleFileLine;
             const xmlContent = (0, utils_1.getContentFile)(file);
@@ -1142,8 +1142,8 @@ function summaryToMarkdown(summary, options, withoutHeader = false) {
     const { color, coverage } = getCoverage(summary);
     const readmeHref = `${serverUrl}/${repository}/blob/${commit}/README.md`;
     const badge = `<a href="${readmeHref}"><img alt="${badgeTitle}: ${coverage}%" src="https://img.shields.io/badge/${badgeTitle}-${coverage}%25-${color}.svg" /></a><br/>`;
-    const tableHeader = '| Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |\n' +
-        '| --- | --- | --- | --- | --- |';
+    const tableHeader = '| Lines | Statements | Branches | Functions |\n' +
+        '| --- | --- | --- | --- |';
     const tableBody = `| ${badge} |` +
         ` World |` +
         ` ${lineSummaryToTd(statements)} |` +

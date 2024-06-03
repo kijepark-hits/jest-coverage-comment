@@ -68,9 +68,9 @@ export function junitToMarkdown(
   const displayTime =
     time > 60 ? `${(time / 60) | 0}m ${time % 60 | 0}s` : `${time}s`
 
-  const tableHeader = `| Tests | Skipped | Failures | Errors | Time |
-| ----- | ------- | -------- | -------- | ------------------ |`
-  const content = `| ${tests} | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`
+  const tableHeader = `| Tests | Passes | Skipped | Failures | Errors | Time |
+| ----- | ----- | ------- | -------- | -------- | ------------------ |`
+  const content = `| ${tests} | ??? | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`
   const table = `${tableHeader}
 ${content}
 `

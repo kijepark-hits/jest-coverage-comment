@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import { existsSync } from 'fs'
-import { SummaryReport, LineSummary, Options, Summary } from './types.d'
+import { LineSummary, Options, Summary, SummaryReport } from './types.d'
 import { getContentFile, getCoverageColor, getPathToFile } from './utils'
 
 /** Parse coverage-summary.json to Summary object. */
@@ -53,8 +53,8 @@ export function summaryToMarkdown(
   const badge = `<a href="${readmeHref}"><img alt="${badgeTitle}: ${coverage}%" src="https://img.shields.io/badge/${badgeTitle}-${coverage}%25-${color}.svg" /></a><br/>`
 
   const tableHeader =
-    '| Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |\n' +
-    '| --- | --- | --- | --- | --- |'
+    '| Lines | Statements | Branches | Functions |\n' +
+    '| --- | --- | --- | --- |'
   const tableBody =
     `| ${badge} |` +
     ` World |` +

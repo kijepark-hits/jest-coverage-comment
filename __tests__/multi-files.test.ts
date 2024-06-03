@@ -1,4 +1,4 @@
-import { expect, test, describe } from '@jest/globals'
+import { describe, expect, test } from '@jest/globals'
 import { getMultipleReport } from '../src/multi-files'
 import { spyCore } from './setup'
 
@@ -46,8 +46,8 @@ describe('multi report', () => {
     } as never)
 
     expect(result).toMatchInlineSnapshot(`
-      "| Title-edited | Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |
-      | --- | --- | --- | --- | --- | --- |
+      "| Title | Lines | Statements | Branches | Functions |
+      | --- | --- | --- | --- | --- |
       | title1 | <a href="https://github.com/undefined/blob/undefined/README.md"><img alt="undefined: 78%" src="https://img.shields.io/badge/undefined-78%25-yellow.svg" /></a><br/> | World | 76.74% (33/43) | 100% (0/0) | 33.33% (2/6) |
       "
     `)
@@ -62,8 +62,8 @@ describe('multi report', () => {
     } as never)
 
     expect(result).toMatchInlineSnapshot(`
-      "| Title-edited | Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |
-      | --- | --- | --- | --- | --- | --- |
+      "| Title | Lines | Statements | Branches | Functions |
+      | --- | --- | --- | --- | --- |
       | title1 | <a href="https://github.com/undefined/blob/undefined/README.md"><img alt="undefined: 78%" src="https://img.shields.io/badge/undefined-78%25-yellow.svg" /></a><br/> | World | 76.74% (33/43) | 100% (0/0) | 33.33% (2/6) |
       | title2 | <a href="https://github.com/undefined/blob/undefined/README.md"><img alt="undefined: 79%" src="https://img.shields.io/badge/undefined-79%25-yellow.svg" /></a><br/> | World | 77.27% (34/44) | 100% (0/0) | 33.33% (2/6) |
       "

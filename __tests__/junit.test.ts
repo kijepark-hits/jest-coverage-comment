@@ -80,9 +80,9 @@ describe('parse junit and check report output', () => {
   }
 
   test('should return junit report', async () => {
-    const html = `| Tests | Skipped | Failures | Errors | Time |
-| ----- | ------- | -------- | -------- | ------------------ |
-| 6 | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
+    const html = `| Tests | Passes | Skipped | Failures | Errors | Time |
+| ----- | ----- | ------- | -------- | -------- | ------------------ |
+| 6 | ??? | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
 `
 
     const junit = await getJunitReport(options)
@@ -116,9 +116,9 @@ describe('parse junit and check report output', () => {
   })
 
   test('should convert time from seconds to minutes', async () => {
-    const html = `| Tests | Skipped | Failures | Errors | Time |
-| ----- | ------- | -------- | -------- | ------------------ |
-| 6 | 0 :zzz: | 0 :x: | 0 :fire: | 9m 15s :stopwatch: |
+    const html = `| Tests | Passes | Skipped | Failures | Errors | Time |
+| ----- | ----- | ------- | -------- | -------- | ------------------ |
+| 6 | ??? | 0 :zzz: | 0 :x: | 0 :fire: | 9m 15s :stopwatch: |
 `
 
     const junit = await getJunitReport(options)
