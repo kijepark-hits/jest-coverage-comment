@@ -22,8 +22,8 @@ export function getMultipleReport(options: Options): string | null {
 
     let atLeastOneFileExists = false
     let table =
-      '| Title-edited | Lines-edited | Statements-edited | Branches-edited | Functions-edited |\n' +
-      '| --- | --- | --- | --- | --- |\n'
+      '| Title-edited | Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |\n' +
+      '| --- | --- | --- | --- | --- | --- |\n'
 
     for (const titleFileLine of lineReports) {
       const { title, file } = titleFileLine

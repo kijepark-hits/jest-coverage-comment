@@ -871,8 +871,8 @@ function getMultipleReport(options) {
             return null;
         }
         let atLeastOneFileExists = false;
-        let table = '| Title-edited | Lines-edited | Statements-edited | Branches-edited | Functions-edited |\n' +
-            '| --- | --- | --- | --- | --- |\n';
+        let table = '| Title-edited | Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |\n' +
+            '| --- | --- | --- | --- | --- | --- |\n';
         for (const titleFileLine of lineReports) {
             const { title, file } = titleFileLine;
             const jsonContent = (0, utils_1.getContentFile)(file);
@@ -1142,9 +1142,10 @@ function summaryToMarkdown(summary, options, withoutHeader = false) {
     const { color, coverage } = getCoverage(summary);
     const readmeHref = `${serverUrl}/${repository}/blob/${commit}/README.md`;
     const badge = `<a href="${readmeHref}"><img alt="${badgeTitle}: ${coverage}%" src="https://img.shields.io/badge/${badgeTitle}-${coverage}%25-${color}.svg" /></a><br/>`;
-    const tableHeader = '| Lines-edited | Statements-edited | Branches-edited | Functions-edited |\n' +
-        '| --- | --- | --- | --- |';
+    const tableHeader = '| Lines-edited | Hello | Statements-edited | Branches-edited | Functions-edited |\n' +
+        '| --- | --- | --- | --- | --- |';
     const tableBody = `| ${badge} |` +
+        ` World |` +
         ` ${lineSummaryToTd(statements)} |` +
         ` ${lineSummaryToTd(branches)} |` +
         ` ${lineSummaryToTd(functions)} |`;
