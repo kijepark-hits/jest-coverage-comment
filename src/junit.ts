@@ -70,7 +70,7 @@ export function junitToMarkdown(
 
   const tableHeader = `| Tests | Passes | Skipped | Failures | Errors | Time |
 | ----- | ----- | ------- | -------- | -------- | ------------------ |`
-  const content = `| ${tests} | ??? | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`
+  const content = `| ${tests} | ??? :check_mark_button: | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`
   const table = `${tableHeader}
 ${content}
 `

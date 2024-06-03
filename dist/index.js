@@ -770,7 +770,7 @@ function junitToMarkdown(junit, options, withoutHeader = false) {
     const displayTime = time > 60 ? `${(time / 60) | 0}m ${time % 60 | 0}s` : `${time}s`;
     const tableHeader = `| Tests | Passes | Skipped | Failures | Errors | Time |
 | ----- | ----- | ------- | -------- | -------- | ------------------ |`;
-    const content = `| ${tests} | ??? | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
+    const content = `| ${tests} | ??? :check_mark_button: | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
     const table = `${tableHeader}
 ${content}
 `;
@@ -1145,7 +1145,6 @@ function summaryToMarkdown(summary, options, withoutHeader = false) {
     const tableHeader = '| Lines | Statements | Branches | Functions |\n' +
         '| --- | --- | --- | --- |';
     const tableBody = `| ${badge} |` +
-        ` World |` +
         ` ${lineSummaryToTd(statements)} |` +
         ` ${lineSummaryToTd(branches)} |` +
         ` ${lineSummaryToTd(functions)} |`;

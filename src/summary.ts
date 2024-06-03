@@ -57,7 +57,6 @@ export function summaryToMarkdown(
     '| --- | --- | --- | --- |'
   const tableBody =
     `| ${badge} |` +
-    ` World |` +
     ` ${lineSummaryToTd(statements)} |` +
     ` ${lineSummaryToTd(branches)} |` +
     ` ${lineSummaryToTd(functions)} |`
