@@ -770,7 +770,7 @@ function junitToMarkdown(junit, options, withoutHeader = false) {
     const displayTime = time > 60 ? `${(time / 60) | 0}m ${time % 60 | 0}s` : `${time}s`;
     const tableHeader = `| Tests | Passes | Skipped | Failures | Errors | Time |
 | ----- | ----- | ------- | -------- | -------- | ------------------ |`;
-    const content = `| ${tests} | ??? :check_mark_button: | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
+    const content = `| ${tests} | ??? :white_check_mark: | ${skipped} :zzz: | ${failures} :x: | ${errors} :fire: | ${displayTime} :stopwatch: |`;
     const table = `${tableHeader}
 ${content}
 `;

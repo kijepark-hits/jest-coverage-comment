@@ -1,4 +1,4 @@
-import { expect, test, describe } from '@jest/globals'
+import { describe, expect, test } from '@jest/globals'
 import { getMultipleJunitReport } from '../src/multi-junit-files'
 import { spyCore } from './setup'
 
@@ -48,7 +48,7 @@ describe('multi junit report', () => {
     expect(result).toMatchInlineSnapshot(`
       "| Title | Tests | Passes | Skipped | Failures | Errors | Time |
       | --- | --- | --- | --- | --- | --- | --- |
-      | title1 | 6 | ??? :check_mark_button: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
+      | title1 | 6 | ??? :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
       "
     `)
   })
@@ -64,8 +64,8 @@ describe('multi junit report', () => {
     expect(result).toMatchInlineSnapshot(`
       "| Title | Tests | Passes | Skipped | Failures | Errors | Time |
       | --- | --- | --- | --- | --- | --- | --- |
-      | title1 | 6 | ??? :check_mark_button: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
-      | title2 | 6 | ??? :check_mark_button: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
+      | title1 | 6 | ??? :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
+      | title2 | 6 | ??? :white_check_mark: | 0 :zzz: | 0 :x: | 0 :fire: | 0.732s :stopwatch: |
       "
     `)
   })
