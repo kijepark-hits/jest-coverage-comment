@@ -53,7 +53,7 @@ export function summaryToMarkdown(
   const badge = `<a href="${readmeHref}"><img alt="${badgeTitle}: ${coverage}%" src="https://img.shields.io/badge/${badgeTitle}-${coverage}%25-${color}.svg" /></a><br/>`
 
   const tableHeader =
-    '| Lines | Statements | Branches | Functions |\n' +
+    '| Lines-edited | Statements-edited | Branches-edited | Functions-edited |\n' +
     '| --- | --- | --- | --- |'
   const tableBody =
     `| ${badge} |` +
